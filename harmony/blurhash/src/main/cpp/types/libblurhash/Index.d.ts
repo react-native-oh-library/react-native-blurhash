@@ -1,0 +1,1 @@
+export const getEncode: (filename: String, components_x: Number, components_y: Number) => string;

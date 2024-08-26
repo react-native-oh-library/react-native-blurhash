@@ -101,7 +101,7 @@ export class Blurhash extends React.PureComponent<BlurhashProps> {
 	 * @see https://github.com/mrousavy/react-native-blurhash#cosine-operations
 	 */
 	static clearCosineCache(): void {
-		if (Platform.OS === 'android') NativeBlurhashModule.clearCosineCache();
+		if (Platform.OS === 'android' || Platform.OS === 'harmony') NativeBlurhashModule.clearCosineCache();
 		else console.warn('Blurhash.clearCosineCache is only available on Android.');
 	}
 
