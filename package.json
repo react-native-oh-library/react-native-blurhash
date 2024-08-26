@@ -1,22 +1,15 @@
 {
-	"name": "react-native-blurhash",
+	"name": "@react-native-oh-tpl/react-native-blurhash",
 	"title": "React Native Blurhash",
-	"version": "2.0.3",
+	"version": "2.0.3-0.0.1",
 	"description": "🖼 Blurhash is a compact representation of a placeholder for an image. This is a Native UI Module for React Native to asynchronously wrap the Blurhash implementations and make them usable in React Native. Also supports encoding!",
 	"main": "lib/commonjs/index.js",
 	"types": "lib/typescript/index.d.ts",
 	"react-native": "src/index.tsx",
 	"module": "lib/module/index.js",
 	"files": [
+		"harmony",
 		"README.md",
-		"android/src",
-		"android/build.gradle",
-		"android/gradle.properties",
-		"ios/Blurhash.xcodeproj/project.pbxproj",
-		"ios/**/*.h",
-		"ios/**/*.m",
-		"ios/**/*.mm",
-		"ios/**/*.swift",
 		"lib/commonjs",
 		"lib/module",
 		"lib/typescript",
@@ -40,7 +33,8 @@
 		"ux",
 		"component",
 		"loading",
-		"placeholder"
+		"placeholder",
+		"harmony"
 	],
 	"author": {
 		"name": "Marc Rousavy",
@@ -70,7 +64,7 @@
 		"typescript": "^5.0.4"
 	},
 	"react-native-builder-bob": {
-		"source": "src",
+		"source": "harmony",
 		"output": "lib",
 		"targets": [
 			"commonjs",
@@ -111,6 +105,9 @@
 		"android": {
 			"javaPackageName": "com.mrousavy.blurhash"
 		}
+	},
+	"harmony":{
+		"alias": "react-native-blurhash"
 	},
 	"packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }
