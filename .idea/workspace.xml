@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="44489d02-5b38-4b05-8941-57a587cd70fb" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.clang-format" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/FUNDING.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/---bug-report.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/---question.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/--feature-request.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/funding-octocat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build-android.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build-ios.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/codeql-analysis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/lint.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/mrousavy/blurhash/Base83.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/mrousavy/blurhash/BlurhashDecoder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/mrousavy/blurhash/BlurhashEncoder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/mrousavy/blurhash/BlurhashImageView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/mrousavy/blurhash/BlurhashModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/mrousavy/blurhash/BlurhashPackage.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/mrousavy/blurhash/BlurhashViewManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/mrousavy/blurhash/RCTLog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/mrousavy/blurhash/RNLog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/mrousavy/blurhash/Utils.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/paper/java/com/facebook/react/viewmanagers/BlurhashViewManagerDelegate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/paper/java/com/facebook/react/viewmanagers/BlurhashViewManagerInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/paper/java/com/mrousavy/blurhash/NativeBlurhashModuleSpec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.bundle/config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.prettierrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.watchmanconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/Gemfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/Gemfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/debug.keystore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/java/com/example/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/java/com/example/MainApplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/drawable/rn_edit_text_material.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.xcode.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/example.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/example.xcodeproj/xcshareddata/xcschemes/example.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/example.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/example.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/example/AppDelegate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/example/AppDelegate.mm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/example/Images.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/example/Images.xcassets/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/example/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/example/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/example/main.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/exampleTests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/exampleTests/exampleTests.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/metro.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/demo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/demo_android.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/demo_ios.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/explanation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BinaryInteger+Encode83.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Blurhash.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Blurhash.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Blurhash.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashBridge.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashCache.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashError.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashHelper.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashModule.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashModule.mm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashModuleImpl.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashView.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashViewComponentView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashViewComponentView.mm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashViewManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/BlurhashViewManager.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/ReactLogger.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/String+Decode83.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/String+Index.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/UIImage+BlurhashDecode.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/UIImage+BlurhashEncode.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-native-blurhash.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/react-native-blurhash.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/specs/NativeBlurhashModule.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/specs/NativeBlurhashModule.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/specs/NativeBlurhashView.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/specs/NativeBlurhashView.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tea.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.build.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2lAyOzrwdCW20Pcatv0BjYCTQdt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "configurable.group.editor"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用级" UseSingleDictionary="true" transferred="true" />
+</project>
