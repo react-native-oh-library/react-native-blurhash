@@ -10,19 +10,24 @@ class JSI_EXPORT BlurhashViewEventEmitter : public ViewEventEmitter {
 public:
     using ViewEventEmitter::ViewEventEmitter;
 
-    struct OnLoadErrorEvent {
+    struct OnLoadStart {
+        std::string blurhash;
+        int decodeWidth;
+        int decodeHeight;
+        double  decodePunch;
+    };
+
+    struct OnLoadEnd {};
+
+    struct OnLoadError {
         std::string message;
     };
 
-    struct OnLoadStartEvent {
-        std::string blurhash;
-    };
+    void onLoadError(OnLoadError value) const;
 
-    void onLoadError(OnLoadErrorEvent value) const;
+    void onLoadEnd(OnLoadEnd value) const;
 
-    void onLoadEnd() const;
-
-    void onLoadStart(OnLoadStartEvent value) const;
+    void onLoadStart(OnLoadStart value) const;
 };
 
 } // namespace react
