@@ -19,9 +19,9 @@ protected:
 
     facebook::jsi::Object createBubblingEventTypes(facebook::jsi::Runtime &rt) override {
         facebook::jsi::Object events(rt);
-        events.setProperty(rt, "topBlurhashLoadStart", createDirectEvent(rt, "onLoadStart"));
-        events.setProperty(rt, "topBlurhashLoadEnd", createDirectEvent(rt, "onLoadEnd"));
-        events.setProperty(rt, "topBlurhashLoadError", createDirectEvent(rt, "onLoadError"));
+        events.setProperty(rt, "topOnLoadStart", createDirectEvent(rt, "onLoadStart"));
+        events.setProperty(rt, "topOnLoadEnd", createDirectEvent(rt, "onLoadEnd"));
+        events.setProperty(rt, "topOnLoadError", createDirectEvent(rt, "onLoadError"));
         return events;
     }
 

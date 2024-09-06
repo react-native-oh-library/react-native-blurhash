@@ -43,7 +43,7 @@ void BlurhashNode::setNodeDelegate(BlurhashNodeDelegate *blurhashNodeDelegate) {
 void BlurhashNode::onNodeEvent(ArkUI_NodeEventType eventType, EventArgs &eventArgs){
     if (eventType == ArkUI_NodeEventType::NODE_IMAGE_ON_COMPLETE) {
         if (m_blurhashNodeDelegate != nullptr && eventArgs[0].i32 == 1) {
-            m_blurhashNodeDelegate->onComplete(eventArgs[1].f32, eventArgs[2].f32);
+            m_blurhashNodeDelegate->onComplete();
         }
     }
 

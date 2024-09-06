@@ -52,20 +52,22 @@ std::string BlurhashViewComponentInstance::decodeImageByBlurhash(const std::stri
 BlurhashNode &BlurhashViewComponentInstance::getLocalRootArkUINode() { return m_imageNode; }
 
 void BlurhashViewComponentInstance::onComplete() {
-    if (m_eventEmitter) {
-        m_eventEmitter->onLoadEnd();
+    m_eventEmitter->onLoadStart({});
+    if (m_eventEmitter == nullptr) {
+        return;
     }
+    m_eventEmitter->onLoadEnd({});
 }
 
-void BlurhashViewComponentInstance::onError() {
+void BlurhashViewComponentInstance::onError(int32_t errorCode) {
     if (m_eventEmitter) {
         m_eventEmitter->onLoadError({});
     }
 }
 
-void BlurhashViewComponentInstance::onStart() {
+void BlurhashViewComponentInstance::onLoadStart(SharedConcreteProps const &props) {
     if (m_eventEmitter) {
-        m_eventEmitter->onLoadStart({});
+        m_eventEmitter->onLoadStart({props->blurhash,props->decodeWidth,props->decodeHeight,props->decodePunch});
     }
 }
 
