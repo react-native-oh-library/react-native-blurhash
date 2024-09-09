@@ -1,7 +1,7 @@
 {
-  module: {
-    name: 'blurhash',
-    type: 'har',
-    deviceTypes: ['default'],
+  "module": {
+    "name": 'blurhash',
+    "type": 'har',
+    "deviceTypes": ['default'],
   },
 }
