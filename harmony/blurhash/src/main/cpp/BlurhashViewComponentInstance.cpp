@@ -16,13 +16,6 @@ BlurhashViewComponentInstance::BlurhashViewComponentInstance(Context context) : 
 
 void BlurhashViewComponentInstance::onPropsChanged(SharedConcreteProps const &props) {
     CppComponentInstance::onPropsChanged(props);
-    DLOG(INFO) << "[Blurhash] Props->imgUri: " << props->imgUri;
-    DLOG(INFO) << "[Blurhash] Props->blurhash: " << props->blurhash;
-    DLOG(INFO) << "[Blurhash] Props->decodeWidth: " << props->decodeWidth;
-    DLOG(INFO) << "[Blurhash] Props->decodeHeight: " << props->decodeHeight;
-    DLOG(INFO) << "[Blurhash] Props->decodePunch: " << props->decodePunch;
-    DLOG(INFO) << "[Blurhash] Props->decodeAsync: " << props->decodeAsync;
-    DLOG(INFO) << "[Blurhash] Props->resizeMode: " << facebook::react::toString(props->resizeMode);
 
     std::string filePath = decodeImageByBlurhash(props->blurhash, props->decodeWidth, props->decodeHeight, props->decodePunch);
     std::string tempPath = "/data/storage/el2/base/haps/entry/cache/" + filePath;
