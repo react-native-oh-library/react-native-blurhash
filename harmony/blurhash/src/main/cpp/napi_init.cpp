@@ -33,7 +33,9 @@ static napi_value getEncode(napi_env env, napi_callback_info info){
     std::string filename = arkJs.getString(args[0]);
     int components_x = arkJs.getInteger(args[1]);
     int components_y = arkJs.getInteger(args[2]);
+    
     std::string blurhashcode = blurhash::encode(filename.c_str(),components_x,components_y);
+    
     napi_value val;
     napi_create_string_utf8(env, blurhashcode.c_str(), blurhashcode.size(), &val);
     return val;
