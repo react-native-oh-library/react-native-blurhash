@@ -38,7 +38,7 @@ std::string BlurhashViewComponentInstance::decodeImageByBlurhash(const std::stri
     auto rnInstance = m_deps->rnInstance.lock();
     auto turboModule = rnInstance->getTurboModule("ImageLoader");
     auto arkTsTurboModule = std::dynamic_pointer_cast<rnoh::ArkTSTurboModule>(turboModule);
-    auto cache = arkTsTurboModule->callSync("getCacheFilePath", {blurhash + ".bmp"});
+    auto cache = arkTsTurboModule->callSync("getPrefetchResult", {blurhash + ".bmp"});
     return cache.asString();
 }
 
