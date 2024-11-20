@@ -14,6 +14,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image_write.h"
 #include "stb_image.h"
+#include <glog/logging.h>
 
 using namespace std::literals;
 
@@ -287,13 +288,19 @@ std::string encode(char const *filename, int components_x, int components_y) {
     h += leftPad(encode83(encodeDC(dc)), 4);
     for (auto ac : factors)
         h += leftPad(encode83(encodeAC(ac, maximumValue)), 2);
+
     return h;
 }
 
 
 void clearCache() {
+
+    DLOG(INFO) << "clearCosineCache:SparseArray<std::vector<double>> Object";
+    DLOG(INFO) << "clearCosineCache:SparseArray<std::vector<double>> Object";
     cacheCosinesX.clear();
-    cacheCosinesY.clear();
+    cacheCosinesY.clear(); 
+    DLOG(INFO) << "clearCosineCache:null";
+    DLOG(INFO) << "clearCosineCache:null";
 }
 } // namespace blurhash
 
