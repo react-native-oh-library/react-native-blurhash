@@ -15,8 +15,24 @@ BlurhashViewComponentInstance::BlurhashViewComponentInstance(Context context) : 
 }
 
 void BlurhashViewComponentInstance::onPropsChanged(SharedConcreteProps const &props) {
+
     CppComponentInstance::onPropsChanged(props);
 
+    if (!m_props || m_props->resizeMode != props->resizeMode) {
+        this->getLocalRootArkUINode().setResizeMode(convertToImageResizeMode(props->resizeMode));
+    }
+    if (props->blurhash == "") {
+        m_eventEmitter->onLoadError({"The provided Blurhash string must not be null!"});
+    };
+    if (props->decodeWidth <= 0) {
+        m_eventEmitter->onLoadError({"decodeWidth must be greater than 0!"});
+    };
+    if (props->decodeHeight <= 0) {
+        m_eventEmitter->onLoadError({"decodeHeight must be greater than 0!"});
+    };
+    if (props->decodePunch <= 0) {
+        m_eventEmitter->onLoadError({"decodePunch must be greater than 0!"});
+    };
     std::string filePath = decodeImageByBlurhash(props->blurhash, props->decodeWidth, props->decodeHeight, props->decodePunch);
     std::string tempPath = "/data/storage/el2/base/haps/entry/cache/" + filePath;
     char *path = new char[tempPath.size() + 1];
@@ -28,13 +44,10 @@ void BlurhashViewComponentInstance::onPropsChanged(SharedConcreteProps const &pr
     if (result != NULL) {
         free(result);
     }
-    if (!m_props || m_props->resizeMode != props->resizeMode) {
-        this->getLocalRootArkUINode().setResizeMode(convertToImageResizeMode(props->resizeMode));
-    }
 }
 
 std::string BlurhashViewComponentInstance::decodeImageByBlurhash(const std::string &blurhash, const int &width, const int &height, const float &punch) {
-    blurhash::decode(blurhash, width, height,punch);
+    blurhash::decode(blurhash, width, height, punch);
     auto rnInstance = m_deps->rnInstance.lock();
     auto turboModule = rnInstance->getTurboModule("ImageLoader");
     auto arkTsTurboModule = std::dynamic_pointer_cast<rnoh::ArkTSTurboModule>(turboModule);
@@ -54,13 +67,13 @@ void BlurhashViewComponentInstance::onComplete() {
 
 void BlurhashViewComponentInstance::onError(int32_t errorCode) {
     if (m_eventEmitter) {
-        m_eventEmitter->onLoadError({});
+        m_eventEmitter->onLoadError({""});
     }
 }
 
 void BlurhashViewComponentInstance::onLoadStart(SharedConcreteProps const &props) {
     if (m_eventEmitter) {
-        m_eventEmitter->onLoadStart({props->blurhash,props->decodeWidth,props->decodeHeight,props->decodePunch});
+        m_eventEmitter->onLoadStart({props->blurhash, props->decodeWidth, props->decodeHeight, props->decodePunch});
     }
 }
 

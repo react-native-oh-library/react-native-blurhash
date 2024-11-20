@@ -17,16 +17,11 @@ protected:
         return object;
     }
 
-    facebook::jsi::Object createBubblingEventTypes(facebook::jsi::Runtime &rt) override {
+    facebook::jsi::Object createDirectEventTypes(facebook::jsi::Runtime &rt) override {
         facebook::jsi::Object events(rt);
         events.setProperty(rt, "topOnLoadStart", createDirectEvent(rt, "onLoadStart"));
         events.setProperty(rt, "topOnLoadEnd", createDirectEvent(rt, "onLoadEnd"));
         events.setProperty(rt, "topOnLoadError", createDirectEvent(rt, "onLoadError"));
-        return events;
-    }
-
-    facebook::jsi::Object createDirectEventTypes(facebook::jsi::Runtime &rt) override {
-        facebook::jsi::Object events(rt);
         return events;
     }
 };
