@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "react-native-blurhash",
+        "License": "MIT License",
+        "License File": "https://github.com/mrousavy/react-native-blurhash/blob/master/LICENSE",
+        "Version Number": "2.0.3",
+        "Owner" : "xiafeng@huawei.com",
+        "Upstream URL": "https://github.com/mrousavy/react-native-blurhash",
+        "Description": "🖼 Blurhash is a compact representation of a placeholder for an image. This is a Native UI Module for React Native to asynchronously wrap the Blurhash implementations and make them usable in React Native. Also supports encoding!"
+    }
+]
