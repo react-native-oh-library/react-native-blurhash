@@ -38,7 +38,7 @@ export class RNBlurhashModule extends TurboModule implements BlurhashModule.Spec
   async createBlurhashFromImage(imageUri: string, componentsX: number, componentsY: number): Promise<string> {
     const imageLoader = this.ctx.rnInstance.getTurboModule<ImageLoaderTurboModule>("ImageLoader");
     const RemoteImageLoader = this.ctx.rnInstance.getTurboModule<RemoteImageLoader>("ImageLoader");
-    await imageLoader.prefetchImage(imageUri)
+    await imageLoader.prefetchImage(imageUri,undefined)
     const filePath = RemoteImageLoader.getPrefetchResult(imageUri)
     const fileName = filePath.split('/').pop();
     const blurhashcode = rnKeysCPPLib.getEncode(fileName,componentsX,componentsY)
