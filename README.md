@@ -1,4 +1,4 @@
-# @react-native-oh-tpl/react-native-blurhash
+# @react-native-ohos/react-native-blurhash
 
 本项目基于 [react-native-blurhash](https://github.com/TiHxdvt/react-native-blurhash)
 
