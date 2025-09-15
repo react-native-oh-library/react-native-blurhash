@@ -25,9 +25,9 @@ protected:
 
     facebook::jsi::Object createDirectEventTypes(facebook::jsi::Runtime &rt) override {
         facebook::jsi::Object events(rt);
-        events.setProperty(rt, "topOnLoadStart", createDirectEvent(rt, "onLoadStart"));
-        events.setProperty(rt, "topOnLoadEnd", createDirectEvent(rt, "onLoadEnd"));
-        events.setProperty(rt, "topOnLoadError", createDirectEvent(rt, "onLoadError"));
+        events.setProperty(rt, "topLoadStart", createDirectEvent(rt, "onLoadStart"));
+        events.setProperty(rt, "topLoadEnd", createDirectEvent(rt, "onLoadEnd"));
+        events.setProperty(rt, "topLoadError", createDirectEvent(rt, "onLoadError"));
         return events;
     }
 };
