@@ -13,6 +13,7 @@
 #include <iomanip>
 #include <react/renderer/core/ConcreteState.h>
 #include <sstream>
+#include <cstdio>
 
 namespace rnoh {
 
@@ -27,59 +28,95 @@ void BlurhashViewComponentInstance::onPropsChanged(SharedConcreteProps const &pr
     if (!m_props || m_props->resizeMode != props->resizeMode) {
         this->getLocalRootArkUINode().setResizeMode(convertToImageResizeMode(props->resizeMode));
     }
+    // Validate inputs and early-return to avoid passing null/invalid data into ArkUI
     if (props->blurhash == "") {
-        m_eventEmitter->onLoadError({"The provided Blurhash string must not be null!"});
-    };
-    if (props->decodeWidth <= 0) {
-        m_eventEmitter->onLoadError({"decodeWidth must be greater than 0!"});
-    };
-    if (props->decodeHeight <= 0) {
-        m_eventEmitter->onLoadError({"decodeHeight must be greater than 0!"});
-    };
-    if (props->decodePunch <= 0) {
-        m_eventEmitter->onLoadError({"decodePunch must be greater than 0!"});
-    };
-    std::string filePath = decodeImageByBlurhash(props->blurhash, props->decodeWidth, props->decodeHeight, props->decodePunch);
-    std::string tempPath = "/data/storage/el2/base/haps/entry/cache/" + filePath;
-    char *path = new char[tempPath.size() + 1];
-    std::strcpy(path, tempPath.c_str());
-    unsigned int length = strlen(path);
-    char *result = NULL;
-    FileManagement_ErrCode ret = OH_FileUri_GetUriFromPath(path, length, &result);
-    this->getLocalRootArkUINode().setSource(std::string(result));
-    if (result != NULL) {
-        free(result);
+        if (m_eventEmitter) m_eventEmitter->onLoadError({.message = "The provided Blurhash string must not be empty!"});
+        return;
     }
+    if (props->decodeWidth <= 0) {
+        if (m_eventEmitter) m_eventEmitter->onLoadError({.message = "decodeWidth must be greater than 0!"});
+        return;
+    }
+    if (props->decodeHeight <= 0) {
+        if (m_eventEmitter) m_eventEmitter->onLoadError({.message = "decodeHeight must be greater than 0!"});
+        return;
+    }
+    if (props->decodePunch <= 0) {
+        if (m_eventEmitter) m_eventEmitter->onLoadError({.message = "decodePunch must be greater than 0!"});
+        return;
+    }
+
+    std::string filePath = decodeImageByBlurhash(props->blurhash, props->decodeWidth, props->decodeHeight, props->decodePunch);
+    if (filePath.empty()) {
+        if (m_eventEmitter) m_eventEmitter->onLoadError({.message = "Failed to decode blurhash to image."});
+        return;
+    }
+    
+
+    // If filePath is already a URI, use it directly
+    if (filePath.find("://") != std::string::npos) {
+    this->getLocalRootArkUINode().setSource(filePath);
+        return;
+    }
+    // If filePath is an absolute path, use it as-is; otherwise prefix cache dir
+    std::string absPath = filePath;
+    if (!(absPath.rfind("/", 0) == 0)) {
+        absPath = "/data/storage/el2/base/haps/entry/cache/" + absPath;
+    }
+
+    const char *path = absPath.c_str();
+    unsigned int length = static_cast<unsigned int>(absPath.size());
+    char *result = nullptr;
+    FileManagement_ErrCode ret = OH_FileUri_GetUriFromPath(path, length, &result);
+    if (ret != FileManagement_ErrCode::ERR_OK || result == nullptr) {
+        if (m_eventEmitter) m_eventEmitter->onLoadError({.message = "Failed to convert path to file URI."});
+        return;
+    }
+    std::string uriStr(result);
+    this->getLocalRootArkUINode().setSource(uriStr);
+    free(result);
 }
 
 std::string BlurhashViewComponentInstance::decodeImageByBlurhash(const std::string &blurhash, const int &width, const int &height, const float &punch) {
+    std::string expectedName = blurhash + ".bmp";
     blurhash::decode(blurhash, width, height, punch);
     auto rnInstance = m_deps->rnInstance.lock();
     auto turboModule = rnInstance->getTurboModule("ImageLoader");
     auto arkTsTurboModule = std::dynamic_pointer_cast<rnoh::ArkTSTurboModule>(turboModule);
-    auto cache = arkTsTurboModule->callSync("getPrefetchResult", {blurhash + ".bmp"});
-    return cache.asString();
+    if (!arkTsTurboModule) {
+        return expectedName; // fallback filename
+    }
+    auto cache = arkTsTurboModule->callSync("getPrefetchResult", {expectedName});
+    std::string result;
+    if (cache.isString()) {
+        result = cache.asString();
+    }
+    if (result.empty()) {
+        // in case non-string/unsupported shape returned, fallback
+        result = expectedName;
+    }
+    return result;
 }
 
 BlurhashNode &BlurhashViewComponentInstance::getLocalRootArkUINode() { return m_imageNode; }
 
 void BlurhashViewComponentInstance::onComplete() {
-    m_eventEmitter->onLoadStart({});
-    if (m_eventEmitter == nullptr) {
-        return;
+    if (m_eventEmitter) {
+        m_eventEmitter->onLoadStart({});
+        m_eventEmitter->onLoadEnd({});
     }
-    m_eventEmitter->onLoadEnd({});
 }
 
 void BlurhashViewComponentInstance::onError(int32_t errorCode) {
     if (m_eventEmitter) {
-        m_eventEmitter->onLoadError({""});
+    m_eventEmitter->onLoadError({.message = ""});
     }
 }
 
 void BlurhashViewComponentInstance::onLoadStart(SharedConcreteProps const &props) {
     if (m_eventEmitter) {
-        m_eventEmitter->onLoadStart({props->blurhash, props->decodeWidth, props->decodeHeight, props->decodePunch});
+    // RN 0.77: DirectEventHandler<null>
+    m_eventEmitter->onLoadStart({});
     }
 }
 
@@ -94,5 +131,7 @@ facebook::react::ImageResizeMode BlurhashViewComponentInstance::convertToImageRe
     case facebook::react::BlurhashViewResizeMode::Center:
         return facebook::react::ImageResizeMode::Center;
     }
+    // Fallback to avoid undefined behavior
+    return facebook::react::ImageResizeMode::Cover;
 }
 } // namespace rnoh
