@@ -164,7 +164,7 @@ std::vector<float> bases_for(size_t dimension, size_t components) {
 
 } // namespace
 namespace blurhash {
-std::string path = "/data/storage/el2/base/haps/entry/cache/";
+std::string path = "/data/storage/el2/base/haps/entry/cache/rn_image_cache/";
 /**
  * @brief 解码Blurhash为图像
  * @param blurhash 待解码的Blurhash字符串

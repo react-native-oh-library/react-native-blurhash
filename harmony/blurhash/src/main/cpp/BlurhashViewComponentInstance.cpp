@@ -61,7 +61,7 @@ void BlurhashViewComponentInstance::onPropsChanged(SharedConcreteProps const &pr
     // If filePath is an absolute path, use it as-is; otherwise prefix cache dir
     std::string absPath = filePath;
     if (!(absPath.rfind("/", 0) == 0)) {
-        absPath = "/data/storage/el2/base/haps/entry/cache/" + absPath;
+        absPath = "/data/storage/el2/base/haps/entry/cache/rn_image_cache/" + absPath;
     }
 
     const char *path = absPath.c_str();
