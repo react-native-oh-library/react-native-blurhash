@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig",
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "example",
+        "harmony",
+        "node_modules",
+        "lib",
+        "**/*.spec.ts",
+        "**/*.test.ts"
+    ]
+}
