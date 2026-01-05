@@ -1,4 +1,3 @@
-/// <reference types="react-native/types/modules/codegen" />
 import type { DirectEventHandler, Double, Int32, WithDefault } from 'react-native/Libraries/Types/CodegenTypes';
 import type { ViewProps } from 'react-native';
 type OnLoadErrorEvent = {

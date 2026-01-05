@@ -47,6 +47,9 @@
 		"react": ">=16.8.1",
 		"react-native": ">=0.60.0-rc.0 <1.0.x"
 	},
+	"dependencies": {
+		"react-native-blurhash": "2.1.3"
+	},
 	"devDependencies": {
 		"@react-native-community/eslint-config": "^3.2.0",
 		"@react-native-community/eslint-plugin": "^1.3.0",
@@ -64,7 +67,7 @@
 		"typescript": "^5.0.4"
 	},
 	"react-native-builder-bob": {
-		"source": "harmony",
+		"source": "src",
 		"output": "lib",
 		"targets": [
 			"commonjs",
