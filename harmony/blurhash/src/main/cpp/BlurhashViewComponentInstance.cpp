@@ -78,7 +78,9 @@ void BlurhashViewComponentInstance::onPropsChanged(SharedConcreteProps const &pr
 }
 
 std::string BlurhashViewComponentInstance::decodeImageByBlurhash(const std::string &blurhash, const int &width, const int &height, const float &punch) {
-    std::string expectedName = blurhash + ".bmp";
+    std::string expectedName =
+        blurhash + "_" + std::to_string(width) + "x" + std::to_string(height) +
+        "_p" + std::to_string(static_cast<int>(punch * 100)) + ".bmp";
     blurhash::decode(blurhash, width, height, punch);
     auto rnInstance = m_deps->rnInstance.lock();
     auto turboModule = rnInstance->getTurboModule("ImageLoader");
