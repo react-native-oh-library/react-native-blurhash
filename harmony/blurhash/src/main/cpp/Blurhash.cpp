@@ -219,7 +219,9 @@ std::string decode(std::string_view blurhash, size_t width, size_t height, float
     i.height = height;
     i.width = width;
 
-    std::string filename = path + std::string(blurhash) + ".bmp";
+    std::string filename = path + std::string(blurhash) + "_" + 
+                        std::to_string(width) + "x" + std::to_string(height) + 
+                        "_p" + std::to_string(static_cast<int>(punch * 100)) + ".bmp";
     stbi_write_bmp(filename.c_str(), i.width, i.height, 3, (void *)i.image.data());
     return filename;
 }
